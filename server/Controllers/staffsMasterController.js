@@ -43,7 +43,7 @@ module.exports = (db, upload) => {
           }
 
           const existingStaffQuery = `SELECT * FROM staffs_master WHERE email = ? OR mobile = ?`;
-          const [existngStaffResults] = await db.query(existingStaffQuery, [email, mobile]);
+          const [existingStaffResults] = await db.query(existingStaffQuery, [email, mobile]);
 
           if (existingStaffResults.length > 0) {
               if (existingStaffResults[0].isAlive === 0) {
